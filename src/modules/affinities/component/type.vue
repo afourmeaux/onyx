@@ -1,11 +1,11 @@
 <template>
-    <div class="type" :style="'background:' + type.color + ';'">
-        <iconDefense :style="'background:' + type.color + ';'" />
-        {{ type.name }}
+    <div :class="`type type-${type.name}`" :style="'color:' + type.color + ';'">
+        <iconType :type="type.name" />
+        <span class="name">{{ type.name }}</span>
     </div>
 </template>
 <script>
-    import iconDefense from '../assets/img/icon-defense';
+    import iconType from './icon-type';
 
     export default {
         name: 'type',
@@ -15,11 +15,8 @@
                 required: true,
             },
         },
-        data() {
-            return {};
-        },
         components: {
-            iconDefense,
+            iconType,
         },
     };
 </script>

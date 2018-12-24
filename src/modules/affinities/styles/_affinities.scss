@@ -1,77 +1,95 @@
-$main-type_width: 100px;
+$main-type_width: 150px;
 
-.type-container {
-    margin: 0 auto;
-    margin-bottom: 45px;
+.affinities {
+    width: 100%;
     font-size: 0;
 
-    .defense,
-    .attack {
-        display: inline-block;
-        width: calc(50% - #{$main-type_width / 2});
+    caption {
+        display: none;
+    }
+}
+
+.affinity {
+    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    box-sizing: content-box;
+    align-items: center;
+
+    &:hover {
+        background: #eef;
+    }
+
+    th,
+    td {
         vertical-align: middle;
-
-        .weak,
-        .strong {
-            > .type,
-            > .icon {
-                margin: 2px;
-            }
-
-            > .icon {
-                vertical-align: middle;
-                display: inline-block;
-                background: grey;
-                min-height: 20px;
-                width: 20px;
-                height: 100%;
-                border-radius: 20px;
-                padding: 4px;
-                box-sizing: border-box;
-                color: #fff;
-
-                svg {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-
-        .weak {
-            > .icon {
-                background: #e74c3c;
-            }
-        }
-
-        .strong {
-            > .icon {
-                background: #27ae60;
-            }
-        }
-    }
-
-    .defense {
-        right: 100%;
-        text-align: right;
-    }
-
-    .attack {
-        left: 100%;
-        text-align: left;
-
-        .icon {
-            padding: 3px;
-        }
-    }
-
-    .imune {
         display: inline-block;
-        opacity: 0.3;
     }
 
     .main-type {
-        display: inline-block;
         width: $main-type_width;
         text-align: center;
+        vertical-align: middle;
+        order: 2;
+    }
+
+    .carac {
+        width: calc(50vw - #{$main-type_width / 2});
+
+        > table {
+            width: 100%;
+        }
+
+        &.defense {
+            order: 1;
+
+            .strength {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+
+            .type-list {
+                display: flex;
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+            }
+        }
+
+        &.attack {
+            order: 3;
+        }
+    }
+
+    .strength {
+        display: flex;
+        align-items: center;
+
+        > .icon {
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            flex-basis: 20px;
+        }
+
+        &.weak {
+            color: #e74c3c;
+        }
+
+        &.strong {
+            color: #27ae60;
+        }
+    }
+
+    .type-wrapper {
+        padding: 3px;
+        display: inline-block;
+
+        &.imune {
+            .type {
+                opacity: 0.5;
+            }
+        }
     }
 }

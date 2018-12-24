@@ -1,20 +1,48 @@
+@import "vars/colors";
+@import "vars/fonts";
+
+@font-face {
+    font-family: 'Pixel Go';
+    src: url('../assets/fonts/PixelGo/Pixel-Go.eot');
+    src: url('../assets/fonts/PixelGo/Pixel-Go.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/PixelGo/Pixel-Go.woff2') format('woff2'),
+    url('../assets/fonts/PixelGo/Pixel-Go.woff') format('woff'),
+    url('../assets/fonts/PixelGo/Pixel-Go.svg#Pixel-Go') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .type {
+    $border_size: 1px;
+
     display: inline-block;
-    height: 20px;
-    border-radius: 20px;
-    min-width: 50px;
-    padding: 0 5px;
     box-sizing: border-box;
     text-align: center;
-    line-height: 20px;
     vertical-align: middle;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
     position: relative;
-    padding-left: 28px;
+    padding-left: 20px;
+    background: currentColor;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    .name {
+        $border_color: rgba(0,0,0,0.2);
+
+        display: inline-block;
+        min-width: 50px;
+        line-height: 20px;
+        font-size: 16px;
+        padding: 0 5px;
+        height: 20px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        color: #fff;
+        text-shadow: $border_size 0 $border_color, 0 $border_size $border_color, #{$border_size * -1} 0 $border_color, 0 #{$border_size * -1} $border_color;
+        font-family: 'Pixel Go', sans-serif;
+    }
 
     .icon {
-        color: #fff;
+        background: currentColor;
         padding: 5px;
         box-sizing: border-box;
         width: 25px;
@@ -29,6 +57,79 @@
         svg {
             height: 100%;
             width: 100%;
+            color: #fff;
         }
+    }
+
+    &.type-bug {
+        background: $type-bug;
+    }
+
+    &.type-dark {
+        background: $type-dark;
+    }
+
+    &.type-dragon {
+        background: $type-dragon;
+    }
+
+    &.type-electric {
+        background: $type-electric;
+    }
+
+    &.type-fairy {
+        background: $type-fairy;
+    }
+
+    &.type-fighting {
+        background: $type-fighting;
+    }
+
+    &.type-fire {
+        background: $type-fire;
+    }
+
+    &.type-flying {
+        background: $type-flying;
+    }
+
+    &.type-ghost {
+        background: $type-ghost;
+    }
+
+    &.type-grass{
+        background: $type-grass;
+    }
+
+    &.type-ground{
+        background: $type-ground;
+    }
+
+    &.type-ice{
+        background: $type-ice;
+    }
+
+    &.type-normal{
+        background: $type-normal;
+    }
+
+    &.type-poison{
+        background: $type-poison;
+    }
+
+    &.type-psychic{
+        background: $type-psychic;
+    }
+
+    &.type-rock{
+        background: $type-rock;
+    }
+
+    &.type-steel{
+        background: $type-steel;
+    }
+
+    &.type-water{
+        background: $type-water;
     }
 }

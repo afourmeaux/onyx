@@ -1,250 +1,245 @@
-const BUG = 'bug';
-const DARK = 'dark';
-const DRAGON = 'dragon';
-const ELECTRIC = 'electric';
-const FAIRY = 'fairy';
-const FIGHTING = 'fighting';
-const FIRE = 'fire';
-const FLYING = 'flying';
-const GHOST = 'ghost';
-const GRASS = 'grass';
-const GROUND = 'ground';
-const ICE = 'ice';
-const NORMAL = 'normal';
-const POISON = 'poison';
-const PSYCHIC = 'psychic';
-const ROCK = 'rock';
-const STEEL = 'steel';
-const WATER = 'water';
+import types from './types';
 
 export default {
-    [BUG]: {
-        name: BUG,
+    [types.BUG]: {
+        name: types.BUG,
         color: '#9FB237',
         defense: {
-            strong: [FIGHTING, GRASS, GROUND],
-            weak: [FIRE, ROCK, FLYING],
+            strong: [types.FIGHTING, types.GRASS, types.GROUND],
+            weak: [types.FIRE, types.ROCK, types.FLYING],
         },
         attack: {
-            strong: [GRASS, DARK, PSYCHIC],
-            weak: [STEEL, FIGHTING, FAIRY, FIRE, POISON, DARK, GHOST, FLYING],
+            strong: [types.GRASS, types.DARK, types.PSYCHIC],
+            weak: [
+                types.STEEL, types.FIGHTING, types.FAIRY, types.FIRE,
+                types.POISON, types.DARK, types.GHOST, types.FLYING,
+            ],
         },
     },
-    [DARK]: {
-        name: DARK,
+    [types.DARK]: {
+        name: types.DARK,
         color: '#6F5344',
         defense: {
-            strong: [GHOST, DARK],
-            weak: [FIGHTING, BUG, FAIRY],
-            imune: [PSYCHIC],
+            strong: [types.GHOST, types.DARK],
+            weak: [types.FIGHTING, types.BUG, types.FAIRY],
+            imune: [types.PSYCHIC],
         },
         attack: {
-            strong: [PSYCHIC, GHOST],
-            weak: [FIGHTING, DARK, STEEL],
+            strong: [types.PSYCHIC, types.GHOST],
+            weak: [types.FIGHTING, types.DARK, types.STEEL],
         },
     },
-    [DRAGON]: {
-        name: DRAGON,
+    [types.DRAGON]: {
+        name: types.DRAGON,
         color: '#7E67EA',
         defense: {
-            strong: [GRASS, FIRE, WATER, ELECTRIC],
-            weak: [ICE, DRAGON, FAIRY],
+            strong: [types.GRASS, types.FIRE, types.WATER, types.ELECTRIC],
+            weak: [types.ICE, types.DRAGON, types.FAIRY],
         },
         attack: {
-            strong: [DRAGON],
-            weak: [STEEL],
-            imune: [FAIRY],
+            strong: [types.DRAGON],
+            weak: [types.STEEL],
+            imune: [types.FAIRY],
         },
     },
-    [ELECTRIC]: {
-        name: ELECTRIC,
+    [types.ELECTRIC]: {
+        name: types.ELECTRIC,
         color: '#FECB46',
         defense: {
-            strong: [FLYING, STEEL, ELECTRIC],
-            weak: [GROUND],
+            strong: [types.FLYING, types.STEEL, types.ELECTRIC],
+            weak: [types.GROUND],
         },
         attack: {
-            strong: [WATER, FLYING],
-            weak: [GRASS, ELECTRIC, DRAGON],
-            imune: [GROUND],
+            strong: [types.WATER, types.FLYING],
+            weak: [types.GRASS, types.ELECTRIC, types.DRAGON],
+            imune: [types.GROUND],
         },
     },
-    [FAIRY]: {
-        name: FAIRY,
+    [types.FAIRY]: {
+        name: types.FAIRY,
         color: '#FFA6FC',
         defense: {
-            strong: [FIGHTING, DARK, BUG],
-            weak: [POISON, STEEL],
-            imune: [DRAGON],
+            strong: [types.FIGHTING, types.DARK, types.BUG],
+            weak: [types.POISON, types.STEEL],
+            imune: [types.DRAGON],
         },
         attack: {
-            strong: [DRAGON, FIGHTING, DARK],
-            weak: [FIRE, POISON, STEEL],
+            strong: [types.DRAGON, types.FIGHTING, types.DARK],
+            weak: [types.FIRE, types.POISON, types.STEEL],
         },
     },
-    [FIGHTING]: {
-        name: FIGHTING,
+    [types.FIGHTING]: {
+        name: types.FIGHTING,
         color: '#B05646',
         defense: {
-            strong: [DARK, BUG, ROCK],
-            weak: [FLYING, PSYCHIC, FAIRY],
+            strong: [types.DARK, types.BUG, types.ROCK],
+            weak: [types.FLYING, types.PSYCHIC, types.FAIRY],
         },
         attack: {
-            strong: [NORMAL, ROCK, ICE, STEEL, DARK],
-            weak: [BUG, FLYING, POISON, PSYCHIC, FAIRY],
-            imune: [GHOST],
+            strong: [types.NORMAL, types.ROCK, types.ICE, types.STEEL, types.DARK],
+            weak: [types.BUG, types.FLYING, types.POISON, types.PSYCHIC, types.FAIRY],
+            imune: [types.GHOST],
         },
     },
-    [FIRE]: {
-        name: FIRE,
+    [types.FIRE]: {
+        name: types.FIRE,
         color: '#FF4527',
         defense: {
-            strong: [FIRE, BUG, ICE, STEEL, GRASS, FAIRY],
-            weak: [WATER, GROUND, ROCK],
+            strong: [types.FIRE, types.BUG, types.ICE, types.STEEL, types.GRASS, types.FAIRY],
+            weak: [types.WATER, types.GROUND, types.ROCK],
         },
         attack: {
-            strong: [GRASS, STEEL, BUG, ICE],
-            weak: [FIRE, WATER, ROCK, DRAGON],
+            strong: [types.GRASS, types.STEEL, types.BUG, types.ICE],
+            weak: [types.FIRE, types.WATER, types.ROCK, types.DRAGON],
         },
     },
-    [FLYING]: {
-        name: FLYING,
+    [types.FLYING]: {
+        name: types.FLYING,
         color: '#6895FC',
         defense: {
-            strong: [FIGHTING, BUG, GRASS],
-            weak: [ICE, ELECTRIC, ROCK],
-            imune: [GROUND],
+            strong: [types.FIGHTING, types.BUG, types.GRASS],
+            weak: [types.ICE, types.ELECTRIC, types.ROCK],
+            imune: [types.GROUND],
         },
         attack: {
-            strong: [GRASS, FIGHTING, BUG],
-            weak: [ELECTRIC, STEEL, ROCK],
+            strong: [types.GRASS, types.FIGHTING, types.BUG],
+            weak: [types.ELECTRIC, types.STEEL, types.ROCK],
         },
     },
-    [GHOST]: {
-        name: GHOST,
+    [types.GHOST]: {
+        name: types.GHOST,
         color: '#6360B0',
         defense: {
-            strong: [BUG, POISON],
-            weak: [DARK, GHOST],
-            imune: [FIGHTING, NORMAL],
+            strong: [types.BUG, types.POISON],
+            weak: [types.DARK, types.GHOST],
+            imune: [types.FIGHTING, types.NORMAL],
         },
         attack: {
-            strong: [GHOST, PSYCHIC],
-            weak: [DARK],
-            imune: [NORMAL],
+            strong: [types.GHOST, types.PSYCHIC],
+            weak: [types.DARK],
+            imune: [types.NORMAL],
         },
     },
-    [GRASS]: {
-        name: GRASS,
+    [types.GRASS]: {
+        name: types.GRASS,
         color: '#74CC5F',
         defense: {
-            strong: [ELECTRIC, WATER, GROUND, GRASS],
-            weak: [ICE, FIRE, FLYING, BUG, POISON],
+            strong: [types.ELECTRIC, types.WATER, types.GROUND, types.GRASS],
+            weak: [types.ICE, types.FIRE, types.FLYING, types.BUG, types.POISON],
         },
         attack: {
-            strong: [WATER, ROCK, GROUND],
-            weak: [FIRE, GRASS, STEEL, DRAGON, FLYING, BUG, POISON],
+            strong: [types.WATER, types.ROCK, types.GROUND],
+            weak: [
+                types.FIRE, types.GRASS, types.STEEL, types.DRAGON,
+                types.FLYING, types.BUG, types.POISON,
+            ],
         },
     },
-    [GROUND]: {
-        name: GROUND,
+    [types.GROUND]: {
+        name: types.GROUND,
         color: '#DCBB5D',
         defense: {
-            strong: [POISON, ROCK],
-            weak: [ICE, WATER, GRASS],
-            imune: [ELECTRIC],
+            strong: [types.POISON, types.ROCK],
+            weak: [types.ICE, types.WATER, types.GRASS],
+            imune: [types.ELECTRIC],
         },
         attack: {
-            strong: [ELECTRIC, STEEL, POISON, FIRE, ROCK],
-            weak: [BUG, GRASS],
-            imune: [FLYING],
+            strong: [types.ELECTRIC, types.STEEL, types.POISON, types.FIRE, types.ROCK],
+            weak: [types.BUG, types.GRASS],
+            imune: [types.FLYING],
         },
     },
-    [ICE]: {
-        name: ICE,
+    [types.ICE]: {
+        name: types.ICE,
         color: '#76DBFE',
         defense: {
-            strong: [ICE],
-            weak: [FIRE, ROCK, STEEL, FIGHTING],
+            strong: [types.ICE],
+            weak: [types.FIRE, types.ROCK, types.STEEL, types.FIGHTING],
         },
         attack: {
-            strong: [GROUND, FLYING, GRASS, DRAGON],
-            weak: [STEEL, FIRE, WATER, ICE],
+            strong: [types.GROUND, types.FLYING, types.GRASS, types.DRAGON],
+            weak: [types.STEEL, types.FIRE, types.WATER, types.ICE],
         },
     },
-    [NORMAL]: {
-        name: NORMAL,
+    [types.NORMAL]: {
+        name: types.NORMAL,
         color: '#B9BAA9',
         defense: {
-            weak: [FIGHTING],
-            imune: [GHOST],
+            weak: [types.FIGHTING],
+            imune: [types.GHOST],
         },
         attack: {
-            weak: [STEEL, ROCK],
-            imune: [GHOST],
+            weak: [types.STEEL, types.ROCK],
+            imune: [types.GHOST],
         },
     },
-    [POISON]: {
-        name: POISON,
+    [types.POISON]: {
+        name: types.POISON,
         color: '#A95495',
         defense: {
-            strong: [GRASS, BUG, POISON, FIGHTING, FAIRY],
-            weak: [GROUND, PSYCHIC],
+            strong: [types.GRASS, types.BUG, types.POISON, types.FIGHTING, types.FAIRY],
+            weak: [types.GROUND, types.PSYCHIC],
         },
         attack: {
-            strong: [GRASS, FAIRY],
-            weak: [POISON, ROCK, GROUND, GHOST],
-            imune: [STEEL],
+            strong: [types.GRASS, types.FAIRY],
+            weak: [types.POISON, types.ROCK, types.GROUND, types.GHOST],
+            imune: [types.STEEL],
         },
     },
-    [PSYCHIC]: {
-        name: PSYCHIC,
+    [types.PSYCHIC]: {
+        name: types.PSYCHIC,
         color: '#FF5395',
         defense: {
-            strong: [FIGHTING, PSYCHIC],
-            weak: [BUG, GHOST, DARK],
+            strong: [types.FIGHTING, types.PSYCHIC],
+            weak: [types.BUG, types.GHOST, types.DARK],
         },
         attack: {
-            strong: [FIGHTING, POISON],
-            weak: [PSYCHIC, STEEL],
-            imune: [DARK],
+            strong: [types.FIGHTING, types.POISON],
+            weak: [types.PSYCHIC, types.STEEL],
+            imune: [types.DARK],
         },
     },
-    [ROCK]: {
-        name: ROCK,
+    [types.ROCK]: {
+        name: types.ROCK,
         color: '#B9A96A',
         defense: {
-            strong: [FIRE, NORMAL, POISON, FLYING],
-            weak: [WATER, GRASS, GROUND, FIGHTING, STEEL],
+            strong: [types.FIRE, types.NORMAL, types.POISON, types.FLYING],
+            weak: [
+                types.WATER, types.GRASS, types.GROUND,
+                types.FIGHTING, types.STEEL,
+            ],
         },
         attack: {
-            strong: [FIRE, FLYING, ICE, BUG],
-            weak: [GROUND, STEEL, FIGHTING],
+            strong: [types.FIRE, types.FLYING, types.ICE, types.BUG],
+            weak: [types.GROUND, types.STEEL, types.FIGHTING],
         },
     },
-    [STEEL]: {
-        name: STEEL,
+    [types.STEEL]: {
+        name: types.STEEL,
         color: '#A9A8B9',
         defense: {
-            strong: [NORMAL, STEEL, GRASS, DRAGON, ICE, FLYING, ROCK, PSYCHIC, BUG, FAIRY],
-            weak: [GROUND, FIRE, FIGHTING],
-            imune: [POISON],
+            strong: [
+                types.NORMAL, types.STEEL, types.GRASS, types.DRAGON, types.ICE,
+                types.FLYING, types.ROCK, types.PSYCHIC, types.BUG, types.FAIRY,
+            ],
+            weak: [types.GROUND, types.FIRE, types.FIGHTING],
+            imune: [types.POISON],
         },
         attack: {
-            strong: [ICE, ROCK, FAIRY],
-            weak: [FIRE, ELECTRIC, STEEL, WATER],
+            strong: [types.ICE, types.ROCK, types.FAIRY],
+            weak: [types.FIRE, types.ELECTRIC, types.STEEL, types.WATER],
         },
     },
-    [WATER]: {
-        name: WATER,
+    [types.WATER]: {
+        name: types.WATER,
         color: '#3995FC',
         defense: {
-            strong: [FIRE, ICE, STEEL, WATER],
-            weak: [ELECTRIC, GRASS],
+            strong: [types.FIRE, types.ICE, types.STEEL, types.WATER],
+            weak: [types.ELECTRIC, types.GRASS],
         },
         attack: {
-            strong: [FIRE, ROCK, GROUND],
-            weak: [WATER, GRASS, DRAGON],
+            strong: [types.FIRE, types.ROCK, types.GROUND],
+            weak: [types.WATER, types.GRASS, types.DRAGON],
         },
     },
 };
